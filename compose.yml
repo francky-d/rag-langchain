@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:15
+    image: pgvector/pgvector:pg15  # Changed from postgres:15
     environment:
       POSTGRES_DB: mydb
       POSTGRES_USER: postgres
@@ -31,7 +31,7 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - POSTGRES_HOST=postgres
-      - POSTGRES_DB=embedding_db
+      - POSTGRES_DB=mydb
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
       - OPENAI_API_KEY=${OPENAI_API_KEY}
